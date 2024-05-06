@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #F2F7FD;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#header{
+    height: 54px;
+    background-color: #3831A1;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo-with-text{
+    width: 200px;
+    height: 44px;
+    margin-left: 10px;
+}
+
+#admin-dashboard{
+    font-size: 24px;
+}
+
+#profile{
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+}
+
+
+#side-bar{
+    flex: 1;
+    width: 240px;
+    background-color: #21264F;
+    height: 100%;
+    color: #FFF;
+    font-size: 18px;    
+}
+
+#side-bar div{
+    padding: 10px 15px 15px 30px;
+}
+
+#side-bar div img{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
+}
+
+#side-bar-students{
+    background-color: #363F81;
+}
