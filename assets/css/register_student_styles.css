@@ -1,0 +1,77 @@
+#heading-students {
+    margin: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.content-section {
+    margin: 20px;
+    padding: 20px 50px 20px 50px;
+    background-color: #FFF;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #d7d7e2;
+}
+
+.form-input {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+    flex: 0.5;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: #F5F5F5;
+    margin-right: 60px;
+}
+
+#name {
+    display: flex;
+}
+
+
+#gender{
+    margin-bottom: 20px;
+}
+
+#male{
+    margin-top: 10px;
+}
+
+.display-flex{
+    display: flex;
+}
+
+#hidden-form-input{
+    visibility: hidden;
+}
+
+.form-label{
+    display: flex;
+}
+.form-label-item{
+    flex: 0.5;
+    margin-right: 50px;
+}
+
+#photo-upload-container{
+    margin-right: 60px;
+}
+
+#photo-upload{
+    width: 100%;    
+    height: 90px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: #F5F5F5;
+}   
+
+#submit-btn{
+    background-color: #21264F;
+    color: #fff;
+    margin: 10px 0 20px 0;
+    padding: 5px 30px 5px 30px;
+    border-radius: 5px;
+    border: 2px solid black;
+}

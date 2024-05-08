@@ -34,11 +34,11 @@ body{
 .form-input{
     font-size: 16px;
     margin: 10px;
+    padding: 5px;
     width: 20rem;
     height: 2rem;
     border-radius: 5px;
     border: 2px solid black;
-    padding: 5px;
     background-color: #F5F5F5;
 }
 

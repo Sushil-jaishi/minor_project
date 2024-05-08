@@ -1,57 +1,69 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
-body{
+body {
     background-color: #F2F7FD;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
-#header{
+#header-content {
+    flex: 1;
+}
+
+#header {
     height: 54px;
     background-color: #3831A1;
     color: #FFF;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
 }
 
-#logo-with-text{
-    width: 200px;
-    height: 44px;
-    margin-left: 10px;
-}
-
-#admin-dashboard{
+#admin-dashboard-text {
     font-size: 24px;
 }
 
-#profile{
+#profile {
     width: 45px;
     height: 45px;
     margin-right: 20px;
 }
 
-
-#side-bar{
-    flex: 1;
-    width: 240px;
-    background-color: #21264F;
-    height: 100%;
-    color: #FFF;
-    font-size: 18px;    
+#header-space {
+    width: 45px;
+    margin-left: 15px;
 }
 
-#side-bar div{
+
+#side-bar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 240px;
+    background-color: #21264F;
+    color: #FFF;
+}
+
+#logo-with-text {
+    width: 200px;
+    height: 44px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#side-bar div {
+    font-size: 18px;
     padding: 10px 15px 15px 30px;
 }
 
-#side-bar div img{
+#side-bar div img {
     width: 25px;
     height: 25px;
     margin-right: 10px;
@@ -59,6 +71,6 @@ body{
     top: 3px;
 }
 
-#side-bar-students{
+#side-bar-students {
     background-color: #363F81;
 }
