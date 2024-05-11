@@ -5,29 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/admin_styles.css">
-    <link rel="stylesheet" href="./assets/css/view_student_styles.css">
+    <link rel="stylesheet" href="../assets/css/admin_styles.css">
+    <link rel="stylesheet" href="../assets/css/view_student_styles.css">
 </head>
 
 <body>
-    <div id="side-bar">
-        <img src="assets/images/logo_with_text.png" alt="fwu logo with text" id="logo-with-text">
-        <div><img src="assets/icons/dashboard.svg" alt="Dashboard"> Dashboard</div>
-        <div id="side-bar-students"><img src="assets/icons/user-solid.svg" alt="Students">Students</div>
-        <div><img src="assets/icons/file-lines-solid.svg" alt="Examination">Examination</div>
-        <div><img src="assets/icons/file-solid.svg" alt="Notice">Notice</div>
-        <div><img src="assets/icons/file-signature-solid.svg" alt="Results">Results</div>
-    </div>
-
-    <div id="header-content">
-        <div id="header">
-            <div id="header-space"></div>
-            <div id="admin-dashboard-text">Admin Dashboard</div>
-            <img src="assets/images/profile.png" alt="Profile" id="profile">
-        </div>
-
-
-        <!-- View student -->
+    <?php include_once "admin.php"; ?>
 
         <div id="heading-students">Students </div>
         <div class="content-section">
@@ -42,9 +25,9 @@
                     Entries
                 </div>
                 <div>
-                    <button type="button" id="filter"><img src="./assets/icons/arrow-up-wide-short-solid.svg"
+                    <button type="button" id="filter"><img src="../assets/icons/arrow-up-wide-short-solid.svg"
                             alt="filter icon" id="filter-icon"> Filter</button>
-                    <button type="button" id="search"><img src="./assets/icons/magnifying-glass-solid.svg"
+                    <button type="button" id="search"><img src="../assets/icons/magnifying-glass-solid.svg"
                             alt="search icon" id="search-icon"> Search</button>
                 </div>
             </div>
@@ -52,6 +35,7 @@
             <table id="student-list">
                 <thead>
                     <tr>
+                        <th></th>
                         <th>Name</th>
                         <th>Gender</th>
                         <th>Department</th>
@@ -62,47 +46,51 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td><img src="../assets/images/profile.png" alt="sushil jaishi" id="student-profile-image"></td>
                         <td>sushil jaishi</td>
                         <td>male</td>
                         <td>Science and technology</td>
                         <td>BSc. CSIT</td>
                         <td>sixth</td>
                         <td>
-                            <a href="#"><img src="./assets/icons/pen-to-square-regular.svg" alt="edit" id="edit"></a>
-                            <a href="#"><img src="./assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
+                            <a href="#"><img src="../assets/icons/pen-to-square-regular.svg" alt="edit" id="edit"></a>
+                            <a href="#"><img src="../assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
                         </td>
                     </tr>
                     <tr>
+                        <td><img src="../assets/images/profile.png" alt="sushil jaishi" id="student-profile-image"></td>
                         <td>sushil jaishi</td>
                         <td>male</td>
                         <td>Science and technology</td>
                         <td>BSc. CSIT</td>
                         <td>sixth</td>
                         <td>
-                            <a href="#"><img src="./assets/icons/pen-to-square-regular.svg" alt="edit" id="edit"></a>
-                            <a href="#"><img src="./assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
+                            <a href="#"><img src="../assets/icons/pen-to-square-regular.svg" alt="edit" id="edit"></a>
+                            <a href="#"><img src="../assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
                         </td>
                     </tr>
                     <tr>
+                        <td><img src="../assets/images/profile.png" alt="sushil jaishi" id="student-profile-image"></td>
                         <td>sushil jaishi</td>
                         <td>male</td>
                         <td>Science and technology</td>
                         <td>BSc. CSIT</td>
                         <td>sixth</td>
                         <td>
-                            <a href="#"><img src="./assets/icons/pen-to-square-regular.svg" alt="edit" id="edit"></a>
-                            <a href="#"><img src="./assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
+                            <a href="#"><img src="../assets/icons/pen-to-square-regular.svg" alt="edit" id="edit"></a>
+                            <a href="#"><img src="../assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
                         </td>
                     </tr>
                     <tr>
+                        <td><img src="../assets/images/profile.png" alt="sushil jaishi" id="student-profile-image"></td>
                         <td>sushil jaishi</td>
                         <td>male</td>
                         <td>Science and technology</td>
                         <td>BSc. CSIT</td>
                         <td>sixth</td>
                         <td>
-                            <a href="#"><img src="./assets/icons/pen-to-square-regular.svg" alt="edit" id="edit"></a>
-                            <a href="#"><img src="./assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
+                            <a href="#"><img src="../assets/icons/pen-to-square-regular.svg" alt="edit" id="edit"></a>
+                            <a href="#"><img src="../assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
                         </td>
                     </tr>
                 </tbody>
