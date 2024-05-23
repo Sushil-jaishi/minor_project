@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    height: 210px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top:0;
+    height:62px;
+    width:100%;
+    background-color: #3831A1;
+    color:white;
+    padding-right:30px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    width: 30%;
+    height: 62px;
+}
+
+.login_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1570px;
+    margin-top: 62px;
+    padding-right:130px;
+    padding-left:80px;
+
+}
+#logo {
+    width: 240px;
+    height: 60px;
+}
+.link_btn {
+    width: 120px;
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+    background-color: #3831A1;
+    border-radius: 160px;
+    color: white;
+
+}
+
+.nav_lists {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3831A1;
+    height: 62px;
+    margin-top: 20px;
+}
+nav ul li {
+    list-style: none;
+    padding: 0 60px;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(250, 249, 249);
+    font-size: 1.25rem;
+}
+
+/* second section */
+
+.main {
+    width: 100%;
+    height: 540px;
+    background-color: #98B4D1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+
+#main_img {
+    width: 455px;
+    height: 455px;
+}
+
+.main_info {
+    width: 680px;
+}
+
+.main_heading {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.main-para {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 2rem;
+    color: black;
+    padding-top:12px;
+}
