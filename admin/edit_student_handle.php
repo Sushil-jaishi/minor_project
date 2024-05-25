@@ -33,6 +33,7 @@ if(isset($_POST['submit'])){
             exit();
         }
         move_uploaded_file($_FILES['photo']['tmp_name'], "../assets/images/uploads/$file_name");
+        unlink("../assets/images/uploads/$old_image");
     }else{
         $file_name = $old_image;
     }
