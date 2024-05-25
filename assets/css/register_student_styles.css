@@ -6,7 +6,7 @@
 
 .content-section {
     margin: 20px;
-    padding: 20px 50px 20px 50px;
+    padding: 20px 50px;
     background-color: #FFF;
     border-radius: 15px;
     box-shadow: 0 0 10px #d7d7e2;
@@ -71,7 +71,23 @@
     background-color: #21264F;
     color: #fff;
     margin: 10px 0 20px 0;
-    padding: 5px 30px 5px 30px;
+    padding: 5px 30px;
     border-radius: 5px;
     border: 2px solid black;
+}
+
+#true{
+    margin: 20px;
+    padding: 10px 50px;
+    background-color: #d4edda;
+    border-radius: 10px;
+    border: 1px solid #C3E6CB;
+}
+
+#false{
+    margin: 20px;
+    padding: 10px 50px;
+    background-color: #f8d7da;
+    border-radius: 10px;
+    border: 1px solid #f5c6cb;
 }

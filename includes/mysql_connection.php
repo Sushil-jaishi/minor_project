@@ -2,15 +2,15 @@
 
 $host = 'localhost';
 $username = 'root';
-$password = ' ';
+$password = '';
 $database = 'online_examination_system';
 
-$conn = new mysqli($host,$username,$password);
+$conn = new mysqli($host,$username,$password,$database);
 
 if($conn->connect_error==true){
     echo "connection failed".$conn->connect_error;
 }else{
-    echo 'mysql connection successful!!';
+    // echo 'mysql connection successful!!';
 }
 
 ?>
