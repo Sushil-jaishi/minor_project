@@ -57,7 +57,26 @@
 
                 <?php
                 require_once "../includes/mysql_connection.php";
-                $sql = "select * from student";
+
+
+                // $pages refers to the total number of pages of the record and $page refers to specific page to be displayed
+
+                $sql= "SELECT count(id) as count_id from student";
+                $count_id_result = $conn->query($sql);
+                $num_rows = $count_id_result->fetch_assoc()["count_id"];
+                $limit = 10;
+                
+                if(isset($_GET['page'])){
+                    $page=$_GET['page'];
+                }else{
+                    $page=1;
+                }
+                
+                $pages = ceil($num_rows/$limit);
+                $offset = ($page-1)*$limit;
+
+
+                $sql = "select * from student limit $limit offset $offset";
                 $result = $conn->query($sql);
                 if($result->num_rows>0){
                     while($row=$result->fetch_assoc()){
@@ -87,13 +106,23 @@
             </table>
         </div>
         <div id="entries-footer">
-            <div>Showing 1 to 10 of 50 entries</div>
+            <div>Showing <?php echo $offset+1 ?> to <?php echo $offset+$result -> num_rows; ?> of <?php echo $num_rows; ?> entries</div>
             <div>
-                <button type="button" class="footer-btn">previous</button>
-                <button type="button" class="footer-btn" id="active">1</button>
+                <a class="footer-btn" href="?page=<?php if($page>1){echo $page-1;} else {echo $page;} ?>">previous</a>
+
+                <?php
+                for($i=1;$i<=$pages;$i++){
+                ?>
+                <a class="footer-btn" id="<?php if($i==$page){echo "active";} ?>" href="?page=<?php echo $i ?>"><?php echo $i; ?></a>
+                <?php
+                }
+                ?>
+
+                <!-- <button type="button" class="footer-btn" id="active">1</button>
                 <button type="button" class="footer-btn">2</button>
-                <button type="button" class="footer-btn">3</button>
-                <button type="button" class="footer-btn">Next</button>
+                <button type="button" class="footer-btn">3</button> -->
+                
+                <a class="footer-btn" href="?page=<?php if($page<$pages){echo $page+1;} else {echo $page;} ?>">Next</a>
             </div>
         </div>
     </div>
