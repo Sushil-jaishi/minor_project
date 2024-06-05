@@ -18,6 +18,7 @@ body {
 #header {
     height: 54px;
     background-color: #3831A1;
+    z-index: 1;
     color: #FFF;
     display: flex;
     align-items: center;
