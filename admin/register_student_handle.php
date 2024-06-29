@@ -1,6 +1,6 @@
 <?php
 
-require_once "../includes/mysql_connection.php";
+require_once "../database/mysql_connection.php";
 
 if(isset($_POST['submit'])){
 

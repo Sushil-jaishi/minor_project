@@ -59,12 +59,12 @@ body {
     margin-top: 10px;
 }
 
-#side-bar div {
+#side-bar li {
     font-size: 18px;
     padding: 10px 15px 15px 30px;
 }
 
-#side-bar div img {
+#side-bar li img {
     width: 25px;
     height: 25px;
     margin-right: 10px;

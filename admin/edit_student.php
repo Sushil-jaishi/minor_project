@@ -23,7 +23,7 @@
 
 
     <?php
-    require_once "../includes/mysql_connection.php";
+    require_once "../database/mysql_connection.php";
     if(isset($_GET['id'])){
         $id=$_GET['id'];  
         $sql= "select * from student where id='$id'";

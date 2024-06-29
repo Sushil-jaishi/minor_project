@@ -56,7 +56,7 @@
 
 
                 <?php
-                require_once "../includes/mysql_connection.php";
+                require_once "../database/mysql_connection.php";
 
 
                 // $pages refers to the total number of pages of the record and $page refers to specific page to be displayed
