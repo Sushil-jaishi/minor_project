@@ -1,0 +1,210 @@
+html, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.candidate-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.candidate-info img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.candidate-info .info {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px 20px;
+    align-items: center;
+    color: #ff6600; /* Orange color */
+}
+.candidate-info .info-row {
+    display: contents;
+}
+
+.info-row{
+    line-height: 0.8;
+}
+.candidate-info .info div {
+    font-size: 14px;
+}
+
+.candidate-info .info span {
+    color: black;
+}
+
+#remaining-time {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 5px;
+    
+}
+
+.main-content {
+    display: flex;
+    height: calc(100% - 70px); /* Adjust based on the height of the navbar */
+}
+
+.left-section {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.question-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+
+.question-header h2 {
+    margin: 0 0 10px;
+}
+
+.question-body p {
+    margin: 0 0 10px;
+}
+
+.question-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.question-body li {
+    margin: 10px 0;
+}
+
+.question-actions {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.question-actions button {
+    margin: 5px 10px 5px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.navigation-buttons button {
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.navigation-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.status {
+    margin-bottom: 20px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.status-color {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.not-visited {
+    background-color: grey;
+}
+
+.not-answered {
+    background-color: red;
+}
+
+.answered {
+    background-color: green;
+}
+
+.marked-review {
+    background-color: orange;
+}
+
+.answered-marked-review {
+    background-color: purple;
+}
+
+.question-nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.question-number {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.question-number.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.question-number:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Add hover effects for buttons */
+button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    color: white;
+}
