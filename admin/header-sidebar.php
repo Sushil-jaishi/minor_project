@@ -5,15 +5,27 @@
 </div>
 <div id="body">
     <div id="side-bar">
-    <ul>
-        <li><img src="../assets/icons/dashboard.svg" alt="Dashboard"> Dashboard</li>
-        <li id="side-bar-students"><img src="../assets/icons/user-solid.svg" alt="Students">Students</li>
-        <li><img src="../assets/icons/file-lines-solid.svg" alt="Examination">Examination</li>
-        <li><img src="../assets/icons/file-solid.svg" alt="Notice">Notice</li>
-        <li><img src="../assets/icons/file-signature-solid.svg" alt="Results">Results</li>
-    </ul>
+        <div class="side-bar">
+            <ul>
+                <li><img src="../assets/icons/dashboard.svg" alt="Dashboard"> Dashboard</li>
+                <li id="side-bar-students">
+                    <div class="floating-option-for-position-relative">
+                        <div class="floating-option">
+                            <ul>
+                                <a href="register_student.php"><li>register student</li></a>
+                                <a href="view_student.php"><li>view student</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="../assets/icons/user-solid.svg" alt="Students">Students
+                </li>
+                <li><img src="../assets/icons/file-lines-solid.svg" alt="Examination">Examination</li>
+                <li><img src="../assets/icons/file-solid.svg" alt="Notice">Notice</li>
+                <li><img src="../assets/icons/file-signature-solid.svg" alt="Results">Results</li>
+            </ul>
+        </div>
     </div>
     <div id="content">
 
     <!-- </div> -->
-<!-- </div> -->
+<!-- </div>  these div should be closed after including this header-sidebar -->

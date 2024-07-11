@@ -56,8 +56,13 @@ body {
     font-size: 18px;
 }
 
-#side-bar li {
+.side-bar{
+    position: relative;
+}
+
+.side-bar li {
     font-size: 18px;
+    list-style-type: none;
     padding: 10px 15px 15px 30px;
 }
 
@@ -69,10 +74,42 @@ body {
     top: 3px;
 }
 
-#side-bar-students {
+.floating-option-for-position-relative{
+    position: relative;
+    top: -10px;
+    left: 15px;
+}
+
+.floating-option{
+    display: none;
+}
+
+.side-bar li:hover .floating-option{
+    display: block;
+    background-color: #21264F;
+    position: absolute;
+    left: 100%;
+    width: max-content;
+    padding: 5px;
+}
+
+.floating-option ul li {
+    padding: 10px 20px;
+}
+
+.floating-option ul li:hover{
     background-color: #363F81;
+}
+
+.floating-option a {
+    text-decoration: none;
+    color:#FFF;
 }
 
 #content {
     flex: 1;
+}
+
+#side-bar-students {
+    background-color: #363F81;
 }
