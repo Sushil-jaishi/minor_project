@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/header-sidebar-styles.css">
-    <link rel="stylesheet" href="../assets/css/view_student_styles.css">
+    <link rel="stylesheet" href="../../../includes/header-sidebar/header-sidebar-styles.css">
+    <link rel="stylesheet" href="view_student_styles.css">
 </head>
 
 <body>
-    <?php include_once "header-sidebar.php"; ?>
+    <?php include_once "../../../includes/header-sidebar/header-sidebar.php"; ?>
 
 
         <div id="heading-students">Students</div>
@@ -34,9 +34,9 @@
                     Entries
                 </div>
                 <div>
-                    <button type="button" id="filter"><img src="../assets/icons/arrow-up-wide-short-solid.svg"
+                    <button type="button" id="filter"><img src="../../../assets/icons/arrow-up-wide-short-solid.svg"
                             alt="filter icon" id="filter-icon"> Filter</button>
-                    <button type="button" id="search"><img src="../assets/icons/magnifying-glass-solid.svg"
+                    <button type="button" id="search"><img src="../../../assets/icons/magnifying-glass-solid.svg"
                             alt="search icon" id="search-icon"> Search</button>
                 </div>
             </div>
@@ -56,7 +56,7 @@
 
 
                 <?php
-                require_once "../database/mysql_connection.php";
+                require_once "../../../database/mysql_connection.php";
 
 
                 // $pages refers to the total number of pages of the record and $page refers to specific page to be displayed
@@ -84,15 +84,15 @@
 
                         <tbody>
                             <tr>
-                                <td><img src="../assets/images/uploads/<?php echo $row['photo']; ?>" alt="Profile" id="student-profile-image"></td>
+                                <td><img src="../../../assets/images/uploads/<?php echo $row['photo']; ?>" alt="Profile" id="student-profile-image"></td>
                                 <td><?php echo $row['first_name']. ' ' . $row['last_name']; ?></td>
                                 <td><?php echo $row['gender']; ?></td>
                                 <td><?php echo $row['department']; ?></td>
                                 <td><?php echo $row['program']; ?></td>
                                 <td><?php echo $row['semester']; ?></td>
                                 <td>
-                                    <a href="edit_student.php?id=<?php echo $row['id']; ?>"><img src="../assets/icons/pen-to-square-regular.svg" alt="edit" id="edit"></a>
-                                    <a href="delete_student.php?id=<?php echo $row['id']; ?>" onclick= "return confirm('are you sure want to delete')"><img src="../assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
+                                    <a href="../edit_student/edit_student.php?id=<?php echo $row['id']; ?>"><img src="../../../assets/icons/pen-to-square-regular.svg" alt="edit" id="edit"></a>
+                                    <a href="../delete_student.php?id=<?php echo $row['id']; ?>" onclick= "return confirm('are you sure want to delete')"><img src="../../../assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -127,6 +127,6 @@
         </div>
     </div>
 </body>
-<script src="../assets/js/register_student.js"></script>
+<script src="view_student.js"></script>
 
 </html>

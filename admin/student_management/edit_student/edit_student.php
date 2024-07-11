@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/header-sidebar-styles.css">
-    <link rel="stylesheet" href="../assets/css/register_student_styles.css">
+    <link rel="stylesheet" href="../../../includes/header-sidebar/header-sidebar-styles.css">
+    <link rel="stylesheet" href="../register_student/register_student_styles.css">
 </head>
 
 <body>
-    <?php include_once "header-sidebar.php"; ?>
+    <?php include_once "../../../includes/header-sidebar/header-sidebar.php"; ?>
 
     <div id="heading-students">Student Registration</div>
 
@@ -23,7 +23,7 @@
 
 
     <?php
-    require_once "../database/mysql_connection.php";
+    require_once "../../../database/mysql_connection.php";
     if(isset($_GET['id'])){
         $id=$_GET['id'];  
         $sql= "select * from student where id='$id'";
@@ -109,6 +109,6 @@
     ?>
     </div>
 </body>
-<script src="../assets/js/register_student.js"></script>
+<script src="../register_student/register_student.js"></script>
 
 </html>
