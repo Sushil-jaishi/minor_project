@@ -12,12 +12,23 @@
                     <div class="floating-option-for-position-relative">
                         <div class="floating-option">
                             <ul>
-                                <a href="../../../admin/student_management/register_student/register_student.php"><li>register student</li></a>
-                                <a href="../../../admin/student_management/view_students/view_student.php"><li>view student</li></a>
+                                <a href="../../../admin/student_management/register_student/register_student.php"><li>Register Student</li></a>
+                                <a href="../../../admin/student_management/view_students/view_student.php"><li>View Student</li></a>
                             </ul>
                         </div>
                     </div>
                     <img src="../../../assets/icons/user-solid.svg" alt="Students">Students
+                </li>
+                <li>
+                    <div class="floating-option-for-position-relative">
+                        <div class="floating-option">
+                            <ul>
+                                <a href="../../../admin/admin_management/register_admin/register_admin.php"><li>Register Admin</li></a>
+                                <a href="../../../admin/admin_management/view_admin/view_admin.php"><li>View Admin</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="../../../assets/icons/user-solid.svg" alt="Students">Admins
                 </li>
                 <li><img src="../../../assets/icons/file-lines-solid.svg" alt="Examination">Examination</li>
                 <li><img src="../../../assets/icons/file-solid.svg" alt="Notice">Notice</li>
