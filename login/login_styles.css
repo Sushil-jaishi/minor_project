@@ -60,3 +60,20 @@ body{
     color: #3831A1;
     text-decoration: none;
 }
+
+
+#true{
+    margin: 20px;
+    padding: 10px 50px;
+    background-color: #d4edda;
+    border-radius: 10px;
+    border: 1px solid #C3E6CB;
+}
+
+#false{
+    margin: 20px;
+    padding: 10px 50px;
+    background-color: #f8d7da;
+    border-radius: 10px;
+    border: 1px solid #f5c6cb;
+}

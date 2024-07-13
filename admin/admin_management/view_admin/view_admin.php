@@ -1,3 +1,7 @@
+<?php
+include_once "../../../login/admin_session_check.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

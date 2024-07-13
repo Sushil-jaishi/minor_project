@@ -1,7 +1,7 @@
 <div id="header">
     <img src="../../../assets/images/logo_with_text.png" alt="fwu logo with text" id="logo-with-text">
     <div id="admin-dashboard">Admin Dashboard</div>
-    <img src="../../../assets/images/profile.png" alt="Profile" id="profile">
+    <a href="http://localhost/minor_project/login/logout.php"><img src="../../../assets/images/profile.png" alt="Profile" id="profile"></a>
 </div>
 <div id="body">
     <div id="side-bar">
