@@ -101,6 +101,10 @@ body {
     background-color: #363F81;
 }
 
+.side-bar > ul > li:hover {
+    background-color: #363F81;
+}
+
 .floating-option a {
     text-decoration: none;
     color:#FFF;

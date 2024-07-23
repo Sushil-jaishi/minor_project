@@ -56,7 +56,7 @@
                         <th>Subject</th>
                         <th>Exam Date</th>
                         <th>Exam Duration</th>
-                        <th>Questions</th>
+                        <th>No. of Questions</th>
                         <th>Action</th>
                     </tr>
                 </thead>
