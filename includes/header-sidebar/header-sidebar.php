@@ -28,9 +28,19 @@
                             </ul>
                         </div>
                     </div>
-                    <img src="../../../assets/icons/user-solid.svg" alt="Students">Admins
+                    <img src="../../../assets/icons/user-solid.svg" alt="Admins">Admins
                 </li>
-                <li><img src="../../../assets/icons/file-lines-solid.svg" alt="Examination">Examination</li>
+                <li>
+                    <div class="floating-option-for-position-relative">
+                        <div class="floating-option">
+                            <ul>
+                                <a href="../../../admin/examination_management/add_examination/add_examination.php"><li>Add Examination</li></a>
+                                <a href="../../../admin/examination_management/view_examination/view_examination.php"><li>View Examination</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="../../../assets/icons/file-lines-solid.svg" alt="Examination">Examination
+                </li>
                 <li><img src="../../../assets/icons/file-solid.svg" alt="Notice">Notice</li>
                 <li><img src="../../../assets/icons/file-signature-solid.svg" alt="Results">Results</li>
             </ul>
