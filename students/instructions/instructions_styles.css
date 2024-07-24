@@ -1,0 +1,183 @@
+html, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3831A1; /* Blue color */
+    padding: 10px;
+    box-sizing: border-box;
+    color: white; /* Text color */
+}
+
+.logo img {
+    height: 60px; /* Increased height from 50px to 60px */
+}
+
+.candidate-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.candidate-info img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.candidate-info .info {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px 20px;
+    align-items: center;
+    color: white; /* Text color */
+}
+
+.candidate-info .info-row {
+    display: contents;
+}
+
+.info-row {
+    line-height: 0.8;
+}
+
+.candidate-info .info div {
+    font-size: 14px;
+}
+
+.candidate-info .info span {
+    color: white; /* Text color */
+}
+
+#remaining-time {
+    background-color: #ff6600; /* Orange color */
+    color: white;
+    padding: 2px 5px; /* Adjust padding to fit within the text */
+    border-radius: 5px;
+    display: inline; /* Ensure the background fits the text */
+}
+
+.main-content {
+    display: flex;
+    height: calc(100% - 70px); /* Adjust based on the height of the navbar */
+    padding: 30px; /* Increased padding */
+    box-sizing: border-box; /* Include padding in the element’s total width and height */
+    overflow-y: auto;
+    background-color: #f7f7f7;
+}
+
+.instructions {
+    max-width: 900px; /* Increased max-width */
+    margin: auto;
+    padding: 30px; /* Increased padding */
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.instructions h2, .instructions h3 {
+    color: #3831A1; /* Blue color */
+}
+
+.instructions p {
+    margin: 10px 0;
+}
+
+.instructions ol, .instructions ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+}
+
+.instructions li ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.instructions .not-visited-icon::before {
+    content: ''; /* Empty content */
+    background-color: rgb(228, 228, 228);
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 2px; /* Optional: to make it look more like a square */
+}
+
+
+.instructions .not-answered-icon::before {
+    content: ''; /* Empty content */
+    background-color: red; /* Set background color to red */
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 2px; /* Optional: to make it look more like a square */
+}
+
+.instructions .answered-icon::before {
+    content: ''; /* Empty content */
+    background-color: green; /* Set background color to green */
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 2px; /* Optional: to make it look more like a square */
+}
+
+.instructions .marked-review-icon::before {
+    content: ''; /* Empty content */
+    background-color: orange; /* Set background color to orange */
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 2px; /* Optional: to make it look more like a square */
+}
+
+.note p {
+    font-weight: bold;
+    color: #3831A1;
+}
+
+.confirmation label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.confirmation input {
+    margin-right: 10px;
+}
+
+.proceed-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.proceed-button button {
+    background-color: #3831A1; /* Blue color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.proceed-button button:hover {
+    background-color: #2c278a; /* Darker shade of blue */
+}
+
+#questions-palette{
+    list-style-type: none;
+}
