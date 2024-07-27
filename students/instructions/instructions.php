@@ -1,3 +1,7 @@
+<?php
+include_once "../../login/student_session_check.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

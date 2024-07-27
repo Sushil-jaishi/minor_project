@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
             if($email==$row['email']&&$password==$row['password']){
                 $_SESSION['user_student']=true;
                 $_SESSION['email']=$row['email'];
-                header("location:../student.php");
+                header("location:../students/instructions/instructions.php");
                 exit();
             }else{
                 header("location:login.php?success=false&message=email or password is wrong");
