@@ -89,7 +89,7 @@ include_once "../../login/student_session_check.php";
                 </label>
             </div>
             <div class="proceed-button">
-                <button>PROCEED</button>
+                <a href="../paper/paper.html" id="proceed"><button>PROCEED</button></a>
             </div>
         </div>
     </div>

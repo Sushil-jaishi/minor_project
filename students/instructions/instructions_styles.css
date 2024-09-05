@@ -181,3 +181,8 @@ html, body {
 #questions-palette{
     list-style-type: none;
 }
+
+#proceed{
+    text-decoration: none;
+    color: #fff;
+}
