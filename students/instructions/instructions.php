@@ -1,5 +1,24 @@
 <?php
 include_once "../../login/student_session_check.php";
+include_once "../../database/mysql_connection.php";
+$user_email=$_SESSION['email'];
+
+$sql = "select first_name,last_name,program,semester from student where email = '$user_email'";
+$result = $conn -> query($sql);
+$user_row= $result->fetch_assoc();
+
+$program = $user_row['program'];
+$semester = $user_row['semester'];
+
+$currentDate = date('Y-m-d');
+$sql = "select * from examination where program='$program' and semester='$semester' and exam_date = '$currentDate'";
+$result = $conn -> query($sql);
+
+if($result->num_rows==0){
+    header("location:../paper_not_found/paper_not_found.html");
+}else{
+    $row= $result->fetch_assoc();
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +38,10 @@ include_once "../../login/student_session_check.php";
             <img src="../../assets/icons/user-solid.svg" alt="User Icon">
             <div class="info">
                 <div class="info-row">
-                    <div>Student Name:</div> <span>Manisha Badal</span>
+                    <div>Student Name:</div> <span><?php echo $user_row['first_name']." ".$user_row['last_name'];?></span>
                 </div>
                 <div class="info-row">
-                    <div>Subject Name:</div> <span class="subject-name">Research and Methodology</span>
+                    <div>Subject Name:</div> <span class="subject-name"><?php echo $row['subject'];?></span>
                 </div>
                 <div class="info-row">
                     <div>Starting Time:</div> <span><span id="remaining-time">02:59:39</span></span>
@@ -89,7 +108,7 @@ include_once "../../login/student_session_check.php";
                 </label>
             </div>
             <div class="proceed-button">
-                <a href="../paper/paper.html" id="proceed"><button>PROCEED</button></a>
+                <a href="../paper/paper.php" id="proceed"><button>PROCEED</button></a>
             </div>
         </div>
     </div>
