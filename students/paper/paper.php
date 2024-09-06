@@ -24,7 +24,6 @@ $exam_id = $exam_row['id'];
 $sql = "select * from questions where examination_id='$exam_id'";
 $result = $conn -> query($sql);
 $number_of_questions = $result -> num_rows;
-// echo $number_of_questions;
 $questions = $result -> fetch_all(MYSQLI_ASSOC);
 
 if(isset($_POST['question'])){
@@ -75,7 +74,6 @@ if(isset($_POST['question'])){
                         <li><input type="radio" name="answer" id="option2"><label for="option2"><?php echo $questions[$current_question-1]['option_2']; ?></label></li>
                         <li><input type="radio" name="answer" id="option3"><label for="option3"><?php echo $questions[$current_question-1]['option_3']; ?></label></li>
                         <li><input type="radio" name="answer" id="option4"><label for="option4"><?php echo $questions[$current_question-1]['option_4']; ?></label></li>
-                        <!-- Add more options as needed -->
                     </ul>
                 </div>
             </div>
@@ -114,14 +112,14 @@ if(isset($_POST['question'])){
             <div class="question-nav">
                 <form method="post">
                     <input type="hidden" name="question" value="1">
-                    <button type="submit" class="question-number active">1</button>
+                    <button type="submit" class="question-number <?php if($current_question == 1) echo 'active'; ?>">1</button>
                 </form>
                 <?php
                 for($i = 2; $i <= $number_of_questions; $i++){
                 ?>
                 <form method="post">
                     <input type="hidden" name="question" value="<?php echo $i; ?>">
-                    <button type="submit" class="question-number"><?php echo $i; ?></button>
+                    <button type="submit" class="question-number <?php if($current_question == $i) echo 'active'; ?>"><?php echo $i; ?></button>
                 </form>
                 <?php
                 }
