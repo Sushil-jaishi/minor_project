@@ -10,6 +10,7 @@ if(isset($_POST['submit'])){
     $subject = $_POST['subject'];
     $exam_date = $_POST['exam_date'];
     $exam_duration = $_POST['exam_duration'];
+    $exam_time = $_POST['exam_time'];
 
     //check if any field is empty 
     $form_data=array(
@@ -18,7 +19,8 @@ if(isset($_POST['submit'])){
         "semester" => $semester,
         "subject" => $subject,
         "exam date" => $exam_date,
-        "exam duration" => $exam_duration
+        "exam duration" => $exam_duration,
+        "exam time" => $exam_time
     );
     foreach ($form_data as $key => $value) {
         if(empty($form_data[$key])){
@@ -60,8 +62,8 @@ if(isset($_POST['submit'])){
 
         //adding examination
         if($i==0){
-            $sql = "INSERT INTO examination (department, program, semester, subject, exam_date, duration)
-            VALUES ('$department', '$program', '$semester', '$subject', '$exam_date', '$exam_duration')";
+            $sql = "INSERT INTO examination (department, program, semester, subject, exam_date, duration, exam_time)
+            VALUES ('$department', '$program', '$semester', '$subject', '$exam_date', '$exam_duration', '$exam_time')";
 
             if($conn->query($sql)){
                 //examination has been added successfully

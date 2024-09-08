@@ -83,3 +83,7 @@ fieldset{
     padding-bottom: 10px;
     border-radius: 5px;
 }
+
+#hidden-form-input{
+    visibility: hidden;
+}
