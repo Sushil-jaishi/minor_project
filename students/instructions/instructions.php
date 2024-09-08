@@ -3,6 +3,7 @@ include_once "../../login/student_session_check.php";
 include_once "../../database/mysql_connection.php";
 $user_email=$_SESSION['email'];
 
+date_default_timezone_set('Asia/Kathmandu');
 $sql = "select first_name,last_name,program,semester from student where email = '$user_email'";
 $result = $conn -> query($sql);
 $user_row= $result->fetch_assoc();
