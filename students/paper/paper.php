@@ -3,10 +3,11 @@ include_once "../../login/student_session_check.php";
 include_once "../../database/mysql_connection.php";
 $user_email=$_SESSION['email'];
 
-$sql = "select first_name,last_name,program,semester from student where email = '$user_email'";
+$sql = "select id,first_name,last_name,program,semester from student where email = '$user_email'";
 $result = $conn -> query($sql);
 $user_row= $result->fetch_assoc();
 
+$student_id = $user_row['id'];
 $program = $user_row['program'];
 $semester = $user_row['semester'];
 
@@ -20,7 +21,7 @@ if($result->num_rows==0){
 }
 $exam_row= $result->fetch_assoc();
 $exam_id = $exam_row['id'];
-
+//fetch all questions from the database
 $sql = "select * from questions where examination_id='$exam_id'";
 $result = $conn -> query($sql);
 $number_of_questions = $result -> num_rows;
@@ -31,6 +32,29 @@ if(isset($_POST['question'])){
 }else{
     $current_question = 1;
 }
+if(isset($_POST['current_question_id'])){
+    $question_id_for_database = $_POST['current_question_id'];
+    
+}
+if(isset($_POST['answer'])){
+    $answer = $_POST['answer'];
+    $sql = "update manage_exam set student_option='$answer' where student_id='$student_id' and question_id = '$question_id_for_database'";
+    $conn->query($sql);
+}
+
+$current_question_id = $questions[$current_question-1]['id'];
+$sql = "select * from manage_exam where student_id='$student_id' and question_id='$current_question_id'";
+$students_data_initialization_result = $conn -> query($sql);
+
+if($students_data_initialization_result->num_rows==0){
+    //initialize the database for student
+    for($i=1;$i<=$number_of_questions;$i++){
+        $question_id = $questions[$i-1]['id'];
+        $sql = "insert into manage_exam (student_id,question_id) values ('$student_id','$question_id')";
+        $conn -> query($sql);
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -61,72 +85,63 @@ if(isset($_POST['question'])){
             </div>
         </div>        
     </div>
-    <div class="main-content">
-        <div class="left-section">
-            <div class="question-section">
-                <div class="question-header">
-                    <h2>Question <?php echo $current_question ?>:</h2>
+    <form method="post">
+        <div class="main-content">
+            <div class="left-section">
+                <div class="question-section">
+                    <div class="question-header">
+                        <h2>Question <?php echo $current_question ?>:</h2>
+                    </div>
+                    <div class="question-body">
+                        <p><?php echo $questions[$current_question-1]['question']; ?></p>
+                        <input type="hidden" name="current_question_id" value="<?php echo $questions[$current_question-1]['id']; ?>">
+                        <ul>
+                            <li><input type="radio" name="answer" id="option1" value="1"><label for="option1"><?php echo $questions[$current_question-1]['option_1']; ?></label></li>
+                            <li><input type="radio" name="answer" id="option2" value="2"><label for="option2"><?php echo $questions[$current_question-1]['option_2']; ?></label></li>
+                            <li><input type="radio" name="answer" id="option3" value="3"><label for="option3"><?php echo $questions[$current_question-1]['option_3']; ?></label></li>
+                            <li><input type="radio" name="answer" id="option4" value="4"><label for="option4"><?php echo $questions[$current_question-1]['option_4']; ?></label></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="question-body">
-                    <p><?php echo $questions[$current_question-1]['question']; ?></p>
-                    <ul>
-                        <li><input type="radio" name="answer" id="option1"><label for="option1"><?php echo $questions[$current_question-1]['option_1']; ?></label></li>
-                        <li><input type="radio" name="answer" id="option2"><label for="option2"><?php echo $questions[$current_question-1]['option_2']; ?></label></li>
-                        <li><input type="radio" name="answer" id="option3"><label for="option3"><?php echo $questions[$current_question-1]['option_3']; ?></label></li>
-                        <li><input type="radio" name="answer" id="option4"><label for="option4"><?php echo $questions[$current_question-1]['option_4']; ?></label></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="navigation-buttons">
-                <div>
-                    <form method="post">
-                        <input type="hidden" name="question" value="<?php if($current_question==1)echo $current_question;else echo $current_question-1;?>">
-                    <button class="previous">PREVIOUS</button>
-                    </form>
-                    <form method="post">
-                        <input type="hidden" name="question" value="<?php if($current_question==$number_of_questions)echo $current_question;else echo $current_question+1;?>">
-                    <button class="next">NEXT</button>
-                    </form>
-                    <span id="space"> </span>
-                    <button class="mark-review">MARK FOR REVIEW</button>
-                    <button class="clear-response">CLEAR RESPONSE</button>
-                </div>
-                <button class="submit">SUBMIT</button>
-            </div>
-        </div>
-        <div class="right-section">
-            <div class="status">
-                <div class="status-item">
-                    <span class="status-color not-visited"></span> Not Visited
-                </div>
-                <div class="status-item">
-                    <span class="status-color not-answered"></span> Not Answered
-                </div>
-                <div class="status-item">
-                    <span class="status-color answered"></span> Answered
-                </div>
-                <div class="status-item">
-                    <span class="status-color marked-review"></span> Marked for Review
+                <div class="navigation-buttons">
+                    <div>
+                        <button type="submit" class="previous" name="question" value="<?php if($current_question==1)echo $current_question;else echo $current_question-1;?>">PREVIOUS</button>
+                        <button type="submit" class="next" name="question" value="<?php if($current_question==$number_of_questions)echo $current_question;else echo $current_question+1;?>">NEXT</button>
+                        <span id="space"> </span>
+                        <button class="mark-review">MARK FOR REVIEW</button>
+                        <button class="clear-response">CLEAR RESPONSE</button>
+                    </div>
+                    <button class="submit">SUBMIT</button>
                 </div>
             </div>
-            <div class="question-nav">
-                <form method="post">
-                    <input type="hidden" name="question" value="1">
-                    <button type="submit" class="question-number <?php if($current_question == 1) echo 'active'; ?>">1</button>
-                </form>
-                <?php
-                for($i = 2; $i <= $number_of_questions; $i++){
-                ?>
-                <form method="post">
-                    <input type="hidden" name="question" value="<?php echo $i; ?>">
-                    <button type="submit" class="question-number <?php if($current_question == $i) echo 'active'; ?>"><?php echo $i; ?></button>
-                </form>
-                <?php
-                }
-                ?>
+            <div class="right-section">
+                <div class="status">
+                    <div class="status-item">
+                        <span class="status-color not-visited"></span> Not Visited
+                    </div>
+                    <div class="status-item">
+                        <span class="status-color not-answered"></span> Not Answered
+                    </div>
+                    <div class="status-item">
+                        <span class="status-color answered"></span> Answered
+                    </div>
+                    <div class="status-item">
+                        <span class="status-color marked-review"></span> Marked for Review
+                    </div>
+                </div>
+                <div class="question-nav">
+                    <button type="submit" class="question-number <?php if($current_question == 1) echo 'active'; ?>" name="question" value="1">1</button>
+                    <?php
+                    for($i = 2; $i <= $number_of_questions; $i++){
+                    ?>
+                    <button type="submit" class="question-number <?php if($current_question == $i) echo 'active'; ?>" name="question" value="<?php echo $i; ?>"><?php echo $i; ?></button>
+                    <?php
+                    }
+                    ?>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
     <script src="paper_script.js"></script>
 </body>
 </html>
