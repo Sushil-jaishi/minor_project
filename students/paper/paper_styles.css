@@ -183,15 +183,29 @@ html, body {
 }
 
 .question-number.active {
-    background-color: #3831A1; /* Blue color */
+    background-color: #3831A1; 
+    color: white;
+}
+
+.question-number.answered {
+    background-color: #008000;
+    color: white;
+}
+
+.question-number.not_answered {
+    background-color: #FF0000;
+    color: white;
+}
+
+.question-number.review {
+    background-color: #FFA500;
     color: white;
 }
 
 .question-number:hover {
-    background-color: #2d2793; /* Darker shade of blue */
+    background-color: #2d2793;
 }
 
-/* Add hover effects for buttons */
 button {
     transition: background-color 0.3s, color 0.3s;
 }
