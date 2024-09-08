@@ -22,23 +22,38 @@ if($result->num_rows==0){
 $exam_row= $result->fetch_assoc();
 $exam_id = $exam_row['id'];
 //fetch all questions from the database
-$sql = "select * from questions where examination_id='$exam_id'";
+$sql = "select * from questions where examination_id='$exam_id' ORDER BY id ASC";
 $result = $conn -> query($sql);
 $number_of_questions = $result -> num_rows;
 $questions = $result -> fetch_all(MYSQLI_ASSOC);
 
 if(isset($_POST['question'])){
     $current_question = (int)$_POST["question"];
+}else if(isset($_POST['question_review'])){
+    $current_question = (int)$_POST["question_review"];
+    $status="review";
 }else{
     $current_question = 1;
 }
 if(isset($_POST['current_question_id'])){
     $question_id_for_database = $_POST['current_question_id'];
-    
 }
 if(isset($_POST['answer'])){
     $answer = $_POST['answer'];
-    $sql = "update manage_exam set student_option='$answer' where student_id='$student_id' and question_id = '$question_id_for_database'";
+    if(isset($status)){
+        $sql = "update manage_exam set student_option='$answer', status='$status' where student_id='$student_id' and question_id = '$question_id_for_database'";
+    }else{
+        $sql = "update manage_exam set student_option='$answer', status='answered' where student_id='$student_id' and question_id = '$question_id_for_database'";
+    }
+    $conn->query($sql);
+}
+
+if(isset($_POST['current_question_id'])&&!isset($_POST['answer'])){
+    if(isset($status)){
+        $sql = "update manage_exam set student_option=NULL, status='$status' where student_id='$student_id' and question_id = '$question_id_for_database'";
+    }else{
+        $sql = "update manage_exam set student_option=NULL, status='not_answered' where student_id='$student_id' and question_id = '$question_id_for_database'";
+    }
     $conn->query($sql);
 }
 
@@ -55,6 +70,14 @@ if($students_data_initialization_result->num_rows==0){
     }
 }
 
+$sql="select * from manage_exam ORDER BY question_id ASC";
+$manage_exam_result = $conn->query($sql);
+$manage_exam = $manage_exam_result -> fetch_all(MYSQLI_ASSOC);
+
+$sql="select student_option from manage_exam where student_id = '$student_id' and question_id = '$current_question_id'";
+$option_result = $conn -> query($sql);
+$student_option_array = $option_result->fetch_assoc();
+$student_option = $student_option_array['student_option'];
 ?>
 
 <!DOCTYPE html>
@@ -96,10 +119,10 @@ if($students_data_initialization_result->num_rows==0){
                         <p><?php echo $questions[$current_question-1]['question']; ?></p>
                         <input type="hidden" name="current_question_id" value="<?php echo $questions[$current_question-1]['id']; ?>">
                         <ul>
-                            <li><input type="radio" name="answer" id="option1" value="1"><label for="option1"><?php echo $questions[$current_question-1]['option_1']; ?></label></li>
-                            <li><input type="radio" name="answer" id="option2" value="2"><label for="option2"><?php echo $questions[$current_question-1]['option_2']; ?></label></li>
-                            <li><input type="radio" name="answer" id="option3" value="3"><label for="option3"><?php echo $questions[$current_question-1]['option_3']; ?></label></li>
-                            <li><input type="radio" name="answer" id="option4" value="4"><label for="option4"><?php echo $questions[$current_question-1]['option_4']; ?></label></li>
+                            <li><input type="radio" name="answer" id="option1" value="1" <?php if($student_option=='1'){echo 'checked';} ?>><label for="option1"><?php echo $questions[$current_question-1]['option_1']; ?></label></li>
+                            <li><input type="radio" name="answer" id="option2" value="2" <?php if($student_option=='2'){echo 'checked';} ?>><label for="option2"><?php echo $questions[$current_question-1]['option_2']; ?></label></li>
+                            <li><input type="radio" name="answer" id="option3" value="3" <?php if($student_option=='3'){echo 'checked';} ?>><label for="option3"><?php echo $questions[$current_question-1]['option_3']; ?></label></li>
+                            <li><input type="radio" name="answer" id="option4" value="4" <?php if($student_option=='4'){echo 'checked';} ?>><label for="option4"><?php echo $questions[$current_question-1]['option_4']; ?></label></li>
                         </ul>
                     </div>
                 </div>
@@ -108,7 +131,7 @@ if($students_data_initialization_result->num_rows==0){
                         <button type="submit" class="previous" name="question" value="<?php if($current_question==1)echo $current_question;else echo $current_question-1;?>">PREVIOUS</button>
                         <button type="submit" class="next" name="question" value="<?php if($current_question==$number_of_questions)echo $current_question;else echo $current_question+1;?>">NEXT</button>
                         <span id="space"> </span>
-                        <button class="mark-review">MARK FOR REVIEW</button>
+                        <button type="submit" class="mark-review" name="question_review" value="<?php if($current_question==$number_of_questions)echo $current_question;else echo $current_question+1;?>">MARK FOR REVIEW</button>
                         <button class="clear-response">CLEAR RESPONSE</button>
                     </div>
                     <button class="submit">SUBMIT</button>
@@ -130,11 +153,11 @@ if($students_data_initialization_result->num_rows==0){
                     </div>
                 </div>
                 <div class="question-nav">
-                    <button type="submit" class="question-number <?php if($current_question == 1) echo 'active'; ?>" name="question" value="1">1</button>
+                    <button type="submit" class="question-number <?php if($current_question == 1) echo 'active'; else if($manage_exam[0]['status']=='answered') echo 'answered'; else if($manage_exam[0]['status']=='not_answered') echo 'not_answered'; else if($manage_exam[0]['status']=='review') echo 'review';?>" name="question" value="1">1</button>
                     <?php
                     for($i = 2; $i <= $number_of_questions; $i++){
                     ?>
-                    <button type="submit" class="question-number <?php if($current_question == $i) echo 'active'; ?>" name="question" value="<?php echo $i; ?>"><?php echo $i; ?></button>
+                    <button type="submit" class="question-number <?php if($current_question == $i) echo 'active'; else if($manage_exam[$i-1]['status']=='answered') echo 'answered'; else if($manage_exam[$i-1]['status']=='not_answered') echo 'not_answered'; else if($manage_exam[$i-1]['status']=='review') echo 'review';?>" name="question" value="<?php echo $i; ?>"><?php echo $i; ?></button>
                     <?php
                     }
                     ?>
