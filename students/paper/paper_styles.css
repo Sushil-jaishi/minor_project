@@ -204,3 +204,7 @@ button:hover {
 #space{
     margin: 30px;
 }
+
+form{
+    display: inline;
+}
