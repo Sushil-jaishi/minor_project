@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #dde3ec;
+}
+
+.wrapper-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin: auto;
+  height: 50%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #edeef610;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  color: #231c60;
+}
+p {
+  line-height: 1.6;
+  color: #033937e1;
+}
+h2 {
+  color: #231c60;
+  margin-top: 30px;
+}
