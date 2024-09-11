@@ -114,7 +114,7 @@ $student_option = $student_option_array['student_option'];
                     <div>Subject Name:</div> <span class="subject-name"><?php echo $exam_row['subject'];?></span>
                 </div>
                 <div class="info-row">
-                    <div>Remaining Time:</div> <span ><span id="remaining-time"><?php if(isset($_POST["previous_time_before_submission"])){ if($_POST['previous_time_before_submission']!='')echo $_POST['previous_time_before_submission']; else echo "00:00:00"; }else{echo "00:00:00";}?></span></span>
+                    <div>Remaining Time:</div> <span ><span id="remaining-time"><?php if(isset($_POST["previous_time_before_submission"]))echo $_POST['previous_time_before_submission']; else echo "00:00:00"; ?></span></span>
                 </div>
             </div>
         </div>        
@@ -137,7 +137,7 @@ $student_option = $student_option_array['student_option'];
                         </ul>
                     </div>
                 </div>
-                <input type="hidden" name="previous_time_before_submission" id="remaining_time_2">
+                <input type="hidden" name="previous_time_before_submission" id="remaining_time_2" value="<?php if(isset($_POST["previous_time_before_submission"]))echo $_POST["previous_time_before_submission"];?>">
                 <div class="navigation-buttons">
                     <div>
                         <button type="submit" class="previous" name="question" value="<?php if($current_question==1)echo $current_question;else echo $current_question-1;?>">PREVIOUS</button>
