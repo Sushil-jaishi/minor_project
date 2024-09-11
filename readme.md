@@ -5,6 +5,6 @@ you have to create database and tables in the following sequences
     2. admin_table.php
     3. student_table.php
     4. examination_table.php
-    5. question_table.php
+    5. questions_table.php
     6. manage_exam_table.php
-tables are referenced with each other so the order of the table creation is required.\
+tables are referenced with each other so the order of the table creation is required.
