@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   padding: 0;
-  background-color: #2a1fc9;
+  background-color: #f0f0f5;
 }
 
 .wrapper-container {
@@ -45,7 +45,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: Arial, sans-serif;
-  background-color: #28289b;
+  background-color: #f0f0f5;
 }
 
 .top-header {
