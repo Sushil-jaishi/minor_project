@@ -17,7 +17,7 @@ $sql = "select * from examination where program='$program' and semester='$semest
 $result = $conn -> query($sql);
 
 if($result->num_rows==0){
-    header("location:../paper_not_found/paper_not_found.php");
+    header("location:../no_exams_today/no_exams_today.html");
     exit();
 }
 $exam_row= $result->fetch_assoc();
@@ -28,7 +28,7 @@ $exam_duration = $exam_row['duration'];
 $exam_end_time = date('Y-m-d H:i:s', strtotime($exam_start_time . " + $exam_duration minutes"));
 $current_date_time = date('Y-m-d H:i:s');
 if(!($exam_start_time<=$current_date_time && $exam_end_time>=$current_date_time)){
-    header("location:results.php");
+    header("location:../../results/results.php");
     exit();
 }
 
@@ -81,7 +81,7 @@ if($students_data_initialization_result->num_rows==0){
     }
 }
 
-$sql="select * from manage_exam ORDER BY question_id ASC";
+$sql="select DISTINCT manage_exam.* from manage_exam inner join questions on manage_exam.question_id=questions.id where questions.examination_id='$exam_id' and manage_exam.student_id='$student_id' ORDER BY manage_exam.question_id ASC;";
 $manage_exam_result = $conn->query($sql);
 $manage_exam = $manage_exam_result -> fetch_all(MYSQLI_ASSOC);
 
