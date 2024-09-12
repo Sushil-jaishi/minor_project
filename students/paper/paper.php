@@ -3,6 +3,7 @@ include_once "../../login/student_session_check.php";
 include_once "../../database/mysql_connection.php";
 $user_email=$_SESSION['email'];
 
+date_default_timezone_set('Asia/Kathmandu');
 $sql = "select id,first_name,last_name,program,semester from student where email = '$user_email'";
 $result = $conn -> query($sql);
 $user_row= $result->fetch_assoc();
@@ -21,6 +22,16 @@ if($result->num_rows==0){
 }
 $exam_row= $result->fetch_assoc();
 $exam_id = $exam_row['id'];
+//exam time checking
+$exam_start_time = $exam_row['exam_date'].' '.$exam_row['exam_time'].":00";
+$exam_duration = $exam_row['duration'];
+$exam_end_time = date('Y-m-d H:i:s', strtotime($exam_start_time . " + $exam_duration minutes"));
+$current_date_time = date('Y-m-d H:i:s');
+if(!($exam_start_time<=$current_date_time && $exam_end_time>=$current_date_time)){
+    header("location:results.php");
+    exit();
+}
+
 //fetch all questions from the database
 $sql = "select * from questions where examination_id='$exam_id' ORDER BY id ASC";
 $result = $conn -> query($sql);
@@ -103,7 +114,7 @@ $student_option = $student_option_array['student_option'];
                     <div>Subject Name:</div> <span class="subject-name"><?php echo $exam_row['subject'];?></span>
                 </div>
                 <div class="info-row">
-                    <div>Remaining Time:</div> <span ><span id="remaining-time">02:59:39</span></span>
+                    <div>Remaining Time:</div> <span ><span id="remaining-time"><?php if(isset($_POST["previous_time_before_submission"]))echo $_POST['previous_time_before_submission']; else echo "00:00:00"; ?></span></span>
                 </div>
             </div>
         </div>        
@@ -126,6 +137,7 @@ $student_option = $student_option_array['student_option'];
                         </ul>
                     </div>
                 </div>
+                <input type="hidden" name="previous_time_before_submission" id="remaining_time_2" value="<?php if(isset($_POST["previous_time_before_submission"]))echo $_POST["previous_time_before_submission"];?>">
                 <div class="navigation-buttons">
                     <div>
                         <button type="submit" class="previous" name="question" value="<?php if($current_question==1)echo $current_question;else echo $current_question-1;?>">PREVIOUS</button>
@@ -165,6 +177,31 @@ $student_option = $student_option_array['student_option'];
             </div>
         </div>
     </form>
-    <script src="paper_script.js"></script>
+    <script>
+        var current_time_server= new Date("<?php echo $current_date_time;?>").getTime();
+        var end_time= new Date("<?php echo $exam_end_time;?>").getTime();
+        var current_time_client= new Date().getTime();
+        var time_difference = current_time_client-current_time_server;
+        var timer = setInterval(function() {
+            var now = new Date().getTime();
+            var remaining_time=end_time-now-time_difference;
+
+            var hours = Math.floor((remaining_time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((remaining_time % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((remaining_time % (1000 * 60)) / 1000);
+            
+            hours = hours.toString().padStart(2, '0');
+            minutes = minutes.toString().padStart(2, '0');
+            seconds = seconds.toString().padStart(2, '0');
+            
+            document.getElementById("remaining-time").innerHTML = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("remaining_time_2").value = hours + ":" + minutes + ":" + seconds;
+            
+            if (remaining_time <= 1000) {
+                clearInterval(timer);
+                document.getElementById("remaining-time").innerHTML = "00:00:00";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>

@@ -74,7 +74,15 @@
                 </div>
                 <div class="display-flex">
                     <input type="date" name="exam_date" class="form-input" required>
-                    <input type="number" name="exam_duration" placeholder="1 hr" class="form-input" required>
+                    <input type="number" name="exam_duration" placeholder="120 minutes" class="form-input" required>
+                </div>
+                <div class="form-label">
+                    <div class="form-label-item">Starting Time</div>
+
+                </div>
+                <div class="display-flex">
+                    <input type="time" name="exam_time" class="form-input" required>
+                    <div class="form-input" id="hidden-form-input"></div>
                 </div>
 
                 <div id="add-question">

@@ -8,7 +8,8 @@ $sql = "CREATE TABLE examination (
     semester varchar(20) not null,
     subject varchar(20) not null,
     exam_date varchar(20) not null,
-    duration varchar(6) not null)";
+    duration varchar(6) not null,
+    exam_time varchar(10) not null)";
 
 if($conn->query($sql)){
     echo "table created successfully";

@@ -1,0 +1,147 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+}
+
+.top-header{
+    background-color: #2f2d86;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3vh 1.5vw;
+}
+.top-header .left{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.header{
+    padding: 1.3vh 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+.header img{
+    width: 250px;
+}
+
+.header .login a{
+    background-color: #2f2d86;
+    padding: 1.5vh 1.5vw;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.login a:hover{
+    background-color:#3d3b92;
+}
+
+.nav{
+    background-color: #2f2d86;
+    padding: 1.3vw 1.5vw;
+}
+
+.nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    text-align: center;
+    gap: 5vw;
+}
+
+.nav a{
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+    padding: 1.5vh 1.5vw;
+    border-radius: 8px;
+}
+
+.nav a:hover{
+    background-color: #3d3b92;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 77vw;
+    margin: auto;
+    gap: 4vw;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.main h1{
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+.main .text{
+    font-size: 20px;
+    padding: 2vw 0;
+
+}
+
+.main .image img{
+    width: 400px;
+}
+
+.footer{
+    background-color: #333333;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 1.3vw;
+}
+
+@media screen and (max-width: 750px){
+    .top-header{
+        font-size: small;
+    }
+
+    .logo img{
+        width: 150px;
+    }
+
+    .nav a{
+        font-size: small;
+    }
+
+    .main{
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .main .content h1{
+        font-size: large;
+    }
+
+    .main .content .text{
+        font-size: medium;
+    }
+
+    .main .image img{
+        width: 300px;
+    }
+    
+}
