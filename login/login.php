@@ -23,6 +23,7 @@ if(isset($_SESSION['user_admin'])){
         echo '<div id='.$_GET['success'].'>'.$_GET['message'].'</div>';
     }
     ?>
+  
     <div class="container">
         <div>
             <img src="../assets/images/fwu_logo.png" alt="FWU LOGO" id="login-logo">
@@ -35,6 +36,7 @@ if(isset($_SESSION['user_admin'])){
         </form>
         <a href="#" id="forgot-password">Forgot Password?</a>
     </div>
+   
 </body>
 <script src="register_student.js"></script>
 
