@@ -69,8 +69,14 @@ html, body {
     border-radius: 8px;
 }
 
+.nav ul li a.current{
+    font-size: large;
+    text-decoration: underline;
+}
+
 .nav a:hover{
     background-color: #3d3b92;
+    font-size: large;
 }
 
 .main{

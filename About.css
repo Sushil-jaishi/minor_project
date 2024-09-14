@@ -48,96 +48,41 @@ body {
   background-color: #f0f0f5;
 }
 
-.top-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.nav{
   background-color: #2f2d86;
-  color: white;
-  padding: 10px 20px;
+  padding: 0.25vw 1.5vw;
 }
 
-.contact-info {
+.wrap{
   display: flex;
-  gap: 20px;
-}
-
-.apply-exam a {
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.apply-exam a:hover {
-  background-color: #4a48a1;
-  color: white;
-}
-
-header {
-  display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  color: #2f2d86;
-  padding: 10px 20px; /* Adjusted padding to reduce height */
 }
 
-.header-left {
+.nav ul{
+  list-style: none;
   display: flex;
-  align-items: center;
+  justify-content: end;
+  text-align: center;
+  gap: 5vw;
 }
 
-.header-left img {
-  height: 50px; /* Adjusted height of the logo */
-  margin-right: 10px;
-}
-
-.login-btn a {
+.nav a{
+  text-decoration: none;
   color: white;
-  background-color: #2f2d86;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  font-size: medium;
+  padding: 1.5vh 1.5vw;
+  border-radius: 8px;
 }
 
-.login-btn a:hover {
+.nav a.current{
+  font-size: large;
+  text-decoration: underline;
+}
+
+.nav a:hover{
   background-color: #3d3b92;
-}
-
-nav {
-  background-color: #3d3b92;
-  padding: 20px 0;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: flex-end;
-  gap: 30px;
-  padding-right: 20px;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-  background-color: #4a48a1;
-  text-decoration: none;
+  font-size: large;
 }
 
 main {
@@ -185,15 +130,20 @@ main {
   height: auto;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
+.footer{
   background-color: #333333;
-  color: white;
   position: absolute;
   bottom: 0;
-  width: 100%;
-}
-.footer {
+  width: 100vw;
   color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 1.3vw;
+}
+
+@media screen and (max-width: 750px){
+  .nav a{
+    font-size: small;
+}
 }
