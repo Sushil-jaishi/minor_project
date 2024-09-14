@@ -124,12 +124,13 @@ body {
 
 #logout{
    
-        background-color: #a1b2b5;
-        padding: 8px 20px 8px 20px;
+        background-color: white;
+        padding: 8px 10px 8px 10px;
         border-radius: 8px;
         text-decoration: none;
-        color: white;
+        color: #2f2d86;
         margin: 7px 20px 7px 0;
+        font-weight: bolder;
 
         
 }
