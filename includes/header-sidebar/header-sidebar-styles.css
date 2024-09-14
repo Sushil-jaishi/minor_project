@@ -117,3 +117,20 @@ body {
 #side-bar-active {
     background-color: #363F81;
 }
+
+#profile-logout{
+    display: flex;
+}
+
+#logout{
+   
+        background-color: #a1b2b5;
+        padding: 8px 20px 8px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: white;
+        margin: 7px 20px 7px 0;
+
+        
+}
+
