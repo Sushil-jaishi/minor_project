@@ -7,8 +7,7 @@
     <div id="side-bar">
         <div class="side-bar">
             <ul>
-                <li><img src="../../../assets/icons/dashboard.svg" alt="Dashboard"> Dashboard</li>
-                <li id="side-bar-students">
+                <li id="side-bar-active" class="active-student">
                     <div class="floating-option-for-position-relative">
                         <div class="floating-option">
                             <ul>
@@ -19,7 +18,7 @@
                     </div>
                     <img src="../../../assets/icons/user-solid.svg" alt="Students">Students
                 </li>
-                <li>
+                <li class="active-admin">
                     <div class="floating-option-for-position-relative">
                         <div class="floating-option">
                             <ul>
@@ -30,7 +29,7 @@
                     </div>
                     <img src="../../../assets/icons/user-solid.svg" alt="Admins">Admins
                 </li>
-                <li>
+                <li class= "active-examination">
                     <div class="floating-option-for-position-relative">
                         <div class="floating-option">
                             <ul>
@@ -42,7 +41,6 @@
                     <img src="../../../assets/icons/file-lines-solid.svg" alt="Examination">Examination
                 </li>
                 <li><img src="../../../assets/icons/file-solid.svg" alt="Notice">Notice</li>
-                <li><img src="../../../assets/icons/file-signature-solid.svg" alt="Results">Results</li>
             </ul>
         </div>
     </div>

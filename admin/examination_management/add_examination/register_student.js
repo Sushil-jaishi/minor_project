@@ -1,4 +1,7 @@
 
+document.getElementById("side-bar-active").removeAttribute("id");
+document.querySelector(".active-examination").id = "side-bar-active";
+
 setTimeout(() => {
     if(!(document.getElementById('true')==null)){
         document.getElementById('true').remove();

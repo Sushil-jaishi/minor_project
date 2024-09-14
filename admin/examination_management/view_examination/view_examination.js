@@ -6,3 +6,6 @@ setTimeout(() => {
         document.getElementById('false').remove();
     }
 }, 4000);
+
+document.getElementById("side-bar-active").removeAttribute("id");
+document.querySelector(".active-examination").id = "side-bar-active";

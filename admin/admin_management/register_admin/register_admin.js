@@ -7,3 +7,6 @@ setTimeout(() => {
     }
 }, 4000);
 
+
+document.getElementById("side-bar-active").removeAttribute("id");
+document.querySelector(".active-admin").id = "side-bar-active";
