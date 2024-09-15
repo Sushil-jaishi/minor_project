@@ -94,7 +94,7 @@ include_once "../../../login/admin_session_check.php";
                                 <td><?php echo $row['contact']; ?></td>
                                 <td>
                                     <a href="../edit_admin/edit_admin.php?id=<?php echo $row['id']; ?>"><img src="../../../assets/icons/pen-to-square-regular.svg" alt="edit" id="edit"></a>
-                                    <a href="../delete_admin.php?id=<?php echo $row['id']; ?>" onclick= "return confirm('are you sure want to delete')"><img src="../../../assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
+                                    <a href="../delete_admin.php?id=<?php echo $row['id']; ?>" onclick= "return confirm('Are you sure want to delete ?')"><img src="../../../assets/icons/trash-can-regular.svg" alt="delete" id="delete"></a>
                                 </td>
                             </tr>
                         </tbody>

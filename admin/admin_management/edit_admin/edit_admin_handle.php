@@ -17,15 +17,15 @@ if(isset($_POST['submit'])){
     if(is_uploaded_file($_FILES['photo']['tmp_name'])){ 
         $file_name = date('dmYHis').str_replace(" ","",basename($_FILES['photo']['name']));
         if($_FILES['photo']['error']>0){
-            header("location:edit_admin.php?id=$id&success=false&message=Error occurs during image upload");
+            header("location:edit_admin.php?id=$id&success=false&message=Error occurred during image upload");
             exit();
         }
         if($_FILES['photo']['size']>5242880){
-            header("location:edit_admin.php?id=$id&success=false&message=photo size must be less than 5 mb");
+            header("location:edit_admin.php?id=$id&success=false&message=Photo size must be less than 5 MB");
             exit();
         }
         if($_FILES['photo']['type'] != 'image/png' && $_FILES['photo']['type'] != 'image/jpg' && $_FILES['photo']['type'] != 'image/jpeg'){
-            header("location:edit_admin.php?id=$id&success=false&message=invalid image format");
+            header("location:edit_admin.php?id=$id&success=false&message=Invalid image format");
             exit();
         }
         move_uploaded_file($_FILES['photo']['tmp_name'], "../../../assets/images/uploads/$file_name");
@@ -68,7 +68,7 @@ if(isset($_POST['submit'])){
     $sql="UPDATE admin SET photo = '$file_name', first_name='$first_name', last_name='$last_name', email= '$email', dob='$dob', contact='$contact', password='$password' where id='$id'";
     if($conn->query($sql)){
         //echo "query success";
-        header('Location:../view_admin/view_admin.php?success=true&message=admin records updated successfully');
+        header('Location:../view_admin/view_admin.php?success=true&message=Admin records updated successfully');
         exit();
     }else{
         echo "query failed";

@@ -11,18 +11,18 @@ if($result=$conn->query($sql)){
         $photo = $row['photo'];
         unlink("../../assets/images/uploads/$photo");
     }else{
-        header("location:view_admin/view_admin.php?success=false&message=Error while delete admin photo from server");
+        header("location:view_admin/view_admin.php?success=false&message=Error while deleting admin photo from server");
         exit();
     }
 }else{
-    header("location:view_admin/view_admin.php?success=false&message=Error while delete admin photo from server");
+    header("location:view_admin/view_admin.php?success=false&message=Error while deleting admin photo from server");
     exit();
 }
 
 //delete admin from database
 $sql = "delete from admin where id='$id'";
 if($conn->query($sql)){
-    header("location:view_admin/view_admin.php?success=false&message=admin deleted successfully");
+    header("location:view_admin/view_admin.php?success=false&message=Admin deleted successfully");
     exit();
 }else{
     echo "error occurs during admin delete".$conn->error;
