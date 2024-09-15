@@ -7,9 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
     height: 100vh;
 }
 
@@ -18,13 +16,13 @@ body {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    max-width: 500px; /* Increased from 400px */
+    max-width: 500px;
     width: 100%;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 25px; /* Increased margin for spacing */
+    margin-bottom: 25px; 
     color: #333;
 }
 
@@ -34,20 +32,20 @@ form {
 }
 
 label {
-    margin-bottom: 10px; /* Increased margin for better spacing */
+    margin-bottom: 10px; 
     color: #555;
 }
 
 input, select {
-    padding: 12px; /* Increased padding for larger input fields */
-    margin-bottom: 20px; /* Increased margin between fields */
+    padding: 12px; 
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
 }
 
 button {
-    padding: 12px; /* Slightly larger button */
+    padding: 12px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -59,3 +57,73 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+
+.nav{
+    background-color: #2f2d86;
+    padding: 0.25vw 1.5vw;
+  }
+  
+  .wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    text-align: center;
+    gap: 5vw;
+  }
+  
+  .nav a{
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+    padding: 1.5vh 1.5vw;
+    border-radius: 8px;
+  }
+  
+  .nav a.current{
+    font-size: large;
+    text-decoration: underline;
+  }
+  
+  .nav a:hover{
+    background-color: #3d3b92;
+    font-size: large;
+  }
+
+  .footer{
+    background-color: #333333;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 1.3vw;
+  }
+
+  .center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 85%;
+  }
+
+  .content{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  @media screen and (max-width: 750px){
+    .nav a{
+      font-size: small;
+  }
+  }

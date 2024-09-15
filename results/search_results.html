@@ -3,22 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Student Result</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="search_results_styles.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Search for Student Result</h2>
-        <form action="marksheet.php" method="post">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-
-            <button type="submit">Search</button>
-        </form>
+    <div class="nav">
+        <div class="wrap">
+            <div class="logo"><img src="../assets/images/logo_with_text.png" alt="Uni logo" width="200px"></div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../aboutusPage.html" >About Us</a></li>
+            <li><a href="../notice.html" >Notice</a></li>
+            <li><a href="../contactUs.html" class="current">Contact Us</a></li>
+            <li><a href="../results/search_results.html">Results</a></li>
+        </ul>
+        </div>
     </div>
+    <div class="content">
+        <div class="container">
+            <h2>Search for Student Result</h2>
+            <form action="marksheet.php" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+    
+    
+                <button type="submit">Search</button>
+            </form>
+        </div>
+</div>
+    <div class="footer">@2024 Far Western University</div>
 </body>
 </html>
