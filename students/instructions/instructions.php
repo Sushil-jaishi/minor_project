@@ -17,6 +17,7 @@ $result = $conn -> query($sql);
 
 if($result->num_rows==0){
     header("location:../no_exams_today/no_exams_today.html");
+    exit();
 }else{
     $exam_row= $result->fetch_assoc();
 }
