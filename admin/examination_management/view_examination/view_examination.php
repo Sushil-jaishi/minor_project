@@ -34,16 +34,8 @@
                     Show
                     <select id="num-of-entries">
                         <option>10</option>
-                        <option>20</option>
-                        <option>50</option>
                     </select>
                     Entries
-                </div>
-                <div>
-                    <button type="button" id="filter"><img src="../../../assets/icons/arrow-up-wide-short-solid.svg"
-                            alt="filter icon" id="filter-icon"> Filter</button>
-                    <button type="button" id="search"><img src="../../../assets/icons/magnifying-glass-solid.svg"
-                            alt="search icon" id="search-icon"> Search</button>
                 </div>
             </div>
             <hr>
