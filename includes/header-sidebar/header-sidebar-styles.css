@@ -40,9 +40,10 @@ body {
 }
 
 #profile {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     margin-right: 20px;
+    margin-top: 5px;
 }
 
 #side-bar {
