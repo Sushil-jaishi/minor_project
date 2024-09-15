@@ -11,11 +11,11 @@ if(isset($_POST['submit'])){
 
 
     if(empty($email)){
-        header("location:login.php?success=false&message=email is required");
+        header("location:login.php?success=false&message=Email is required");
         exit();
     }
     if(empty($password)){
-        header("location:login.php?success=false&message=password is required");
+        header("location:login.php?success=false&message=Password is required");
         exit();
     }
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
         $sql = "select email,password from student where email='$email'";
         $result2 = $conn->query($sql);
         if($result2->num_rows == 0){
-            header("location:login.php?success=false&message=user not found");
+            header("location:login.php?success=false&message=User not found");
             exit();
         }else{
             $row = $result2->fetch_assoc();
@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
                 header("location:../students/instructions/instructions.php");
                 exit();
             }else{
-                header("location:login.php?success=false&message=email or password is wrong");
+                header("location:login.php?success=false&message=Email or Password is wrong");
                 exit();
             }
         }
@@ -54,7 +54,7 @@ if(isset($_POST['submit'])){
             header("location:../admin/student_management/register_student/register_student.php");
             exit();
         }else{
-            header("location:login.php?success=false&message=email or password is wrong");
+            header("location:login.php?success=false&message=Email or Password is wrong");
             exit();
         }
     }

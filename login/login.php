@@ -18,13 +18,15 @@ if(isset($_SESSION['user_admin'])){
 </head>
 
 <body>
-    <?php
-    if(isset($_GET['success'])){
-        echo '<div id='.$_GET['success'].'>'.$_GET['message'].'</div>';
-    }
-    ?>
-  
+    
     <div class="container">
+
+        <?php
+            if(isset($_GET['success'])){
+                echo '<div id='.$_GET['success'].'>'.$_GET['message'].'</div>';
+            }
+        ?>
+
         <div>
             <img src="../assets/images/fwu_logo.png" alt="FWU LOGO" id="login-logo">
         </div>
